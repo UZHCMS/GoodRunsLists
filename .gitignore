@@ -26,3 +26,7 @@
 *.exe
 *.out
 *.app
+
+# further SFrame related files
+*_Dict.cxx
+*_Dict_rdict.pcm
