@@ -58,7 +58,7 @@ void MyAnalysis::BeginInputData( const SInputData& ) throw( SError ) {
 
 void MyAnalysis::ExecuteEvent( const SInputData&, Double_t ) throw( SError ) {
   
-  bool isGood = true;
+  // might be better in a separate function (e.g. bool MyAnalysis::isGoodEvent(runNumber, lumiSection))
   if (m_isData) {
     bool isGood = m_grl.HasRunLumiBlock( runNumber, lumiSection );
     if( !isGood ) {
@@ -102,3 +102,4 @@ In the `JobConfiguration` part, add before the `Library` of your analysis code:
 ## Acknowledgements
 
 The JSON parser is taken from https://github.com/open-source-parsers/jsoncpp
+Most of the other code is taken from Max Baak and Attila Krasznahorkay, who developed this code for ATLAS analyses.
